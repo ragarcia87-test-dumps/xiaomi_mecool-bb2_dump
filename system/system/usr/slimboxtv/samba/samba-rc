@@ -1,0 +1,113 @@
+#!/system/bin/sh
+# Start / stop samba server daemons
+PATH=$PATH:/system/xbin:/system/xbin/bb:/system/bin/bb
+export PATH
+PRE=/data/system/samba_________________ug
+LOG=$PRE/var/log.samba-rc
+SPIDFILE=$PRE/var/locks/smbd.pid
+NPIDFILE=$PRE/var/locks/nmbd.pid
+
+case "$1" in
+	start)
+        $0 stop
+	    $0 cleanup
+	    $0 rmlogs
+	    $PRE/nmbd -D
+	    $PRE/smbd -D
+	    chmod 644 $NPIDFILE
+	    chmod 644 $SPIDFILE
+	    echo ok
+	    ;;
+	stop)
+		#if [ -f $SPIDFILE ]; then
+			kill `cat $SPIDFILE`
+			rm $SPIDFILE
+		#fi
+		#if [ -f $NPIDFILE ]; then
+			kill `cat $NPIDFILE`
+			rm $NPIDFILE
+		#fi
+	    echo ok
+		;;
+	restart)
+		$0 start		
+		;;
+	test123)
+		echo test123
+		;;
+	cleanup)
+		rm  $PRE/var/tmp/*
+		;;
+	fullcleanup)
+		rm $PRE/var/locks/*.tdb 
+		rm $PRE/var/locks/*.dat
+		rm $PRE/secrets.tdb
+		rm $PRE/var/tmp/* 
+		;;
+	pass)
+		rm $PRE/smbpasswd
+		file="$PRE/smbpasswd_tmp"
+		user=""
+		pass=""
+		index=0
+		while read line
+		do
+			index=$(($index+1))
+			case "$index" in
+			1)
+				user="$line"
+				;;
+			2)
+				pass="$line"
+				;;
+			esac
+		done < $file
+		echo "$pass" | $PRE/smbpasswdbin -as "$user"
+		rm  $PRE/smbpasswd_tmp
+		;;
+	fixperms)
+		chmod 775 $PRE
+		chmod 775 $PRE/samba-rc 
+		chmod 775 $PRE/nmbd 
+		chmod 775 $PRE/smbd 
+		chmod 775 $PRE/smbpasswdbin
+		chmod 775 $PRE/lib 
+		chmod 775 $PRE/private 
+		chmod 777 $PRE/var/locks 
+		chmod 777 $PRE/var/tmp 
+		chmod 777 $PRE/var
+		chmod 664 $PRE/smb.conf 
+		chmod 644 $NPIDFILE 
+		chmod 644 $SPIDFILE
+		;;
+	rmlogs)
+		rm  $PRE/var/log.*
+		;;   
+	killallsamba)
+		# This is such an ugly way to seek+destroy samba daemons, I know.
+		# Things get ugly when your OS doesnt have grep tho...
+		cd /proc
+		for pid in [0-9]*
+		do
+		   cmdline=`cat $pid/cmdline`
+		   case "$cmdline" in
+			/data/system/samba_________________ug/smbd-D)
+				kill -9 $pid
+				echo "Killed $pid"
+				;;
+			/data/system/samba_________________ug/nmbd-D)
+				kill -9 $pid
+				echo "Killed $pid"
+				;;
+		   esac
+		done
+		echo "ok"
+		;;
+	*)
+		echo "Usage: $0 {start|stop|restart|cleanup|fixperms|rmlogs}"
+		exit 1
+		;;
+esac
+exit 0
+
+

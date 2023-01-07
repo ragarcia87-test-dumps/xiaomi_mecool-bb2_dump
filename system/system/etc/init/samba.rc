@@ -1,0 +1,46 @@
+#Samba Support
+on property:app.samba.config=start
+    start samba_start
+
+on property:app.samba.config=stop
+    start samba_stop
+
+on property:app.samba.config=fixperms
+    start samba_fixperms
+
+on property:app.samba.config=pass
+    start samba_pass
+
+on property:app.samba.config=killallsamba
+    start samba_killallsamba
+
+service samba_start /data/system/samba_________________ug/samba-rc start
+    class main
+    disabled
+    oneshot
+    seclabel u:r:init:s0
+
+service samba_stop /data/system/samba_________________ug/samba-rc stop
+    class main
+    disabled
+    oneshot
+    seclabel u:r:init:s0
+
+service samba_fixperms /data/system/samba_________________ug/samba-rc fixperms
+    class main
+    disabled
+    oneshot
+    seclabel u:r:init:s0
+
+service samba_pass /data/system/samba_________________ug/samba-rc pass
+    class main
+    disabled
+    oneshot
+    seclabel u:r:init:s0
+
+service samba_killallsamba /data/system/samba_________________ug/samba-rc killallsamba
+    class main
+    disabled
+    oneshot
+    seclabel u:r:init:s0
+

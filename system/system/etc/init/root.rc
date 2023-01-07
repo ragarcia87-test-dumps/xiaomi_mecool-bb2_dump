@@ -1,0 +1,41 @@
+#Root Access for users support
+service daemonsu /system/xbin/daemonsu --auto-daemon
+    class main
+    oneshot
+    seclabel u:r:init:s0
+
+service get_root /system/bin/slim_box_su get_root
+    class main
+    disabled
+    oneshot
+    seclabel u:r:init:s0
+
+service get_root_silent /system/bin/slim_box_su get_root_silent
+    class main
+    disabled
+    oneshot
+    seclabel u:r:init:s0
+
+service restore_root /system/bin/slim_box_su restore_root
+    class main
+    disabled
+    oneshot
+    seclabel u:r:init:s0
+
+service factory_reset /system/bin/slim_box_su factory_reset
+    class main
+    disabled
+    oneshot
+    seclabel u:r:init:s0
+
+on property:misc.root.state=1
+    start get_root
+
+on property:misc.root.state=2
+    start get_root_silent
+ 
+on property:misc.root.state=0
+    start restore_root
+
+on property:misc.root.state=3
+    start factory_reset

@@ -1,0 +1,424 @@
+# Copyright (C) 2010 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# Key character map for full alphabetic QWERTZ external keyboards (By Kazel)
+#
+# This file is based on the generic QWERTY key character map, modified to apply as QWERTZ
+#
+
+type FULL
+
+### Basic QWERTZ keys ###
+
+key A {
+    label:                              'A'
+    base:                               'a'
+    shift, capslock:                    'A'
+    capslock+shift:                     'a'
+    ctrl, alt, meta:                    none
+}
+
+key B {
+    label:                              'B'
+    base:                               'b'
+    shift, capslock:                    'B'
+    capslock+shift:                     'b'
+    ctrl, alt, meta:                    none
+}
+
+key C {
+    label:                              'C'
+    base:                               'c'
+    shift, capslock:                    'C'
+    capslock+shift:                     'c'
+    ctrl, meta:                         none
+}
+
+key D {
+    label:                              'D'
+    base:                               'd'
+    shift, capslock:                    'D'
+    capslock+shift:                     'd'
+    ctrl, alt, meta:                    none
+}
+
+key E {
+    label:                              'E'
+    base:                               'e'
+    shift, capslock:                    'E'
+    capslock+shift:                     'e'
+    ralt:                               '\u20ac'
+}
+
+key F {
+    label:                              'F'
+    base:                               'f'
+    shift, capslock:                    'F'
+    capslock+shift:                     'f'
+    ctrl, alt, meta:                    none
+}
+
+key G {
+    label:                              'G'
+    base:                               'g'
+    shift, capslock:                    'G'
+    capslock+shift:                     'g'
+    ctrl, alt, meta:                    none
+}
+
+key H {
+    label:                              'H'
+    base:                               'h'
+    shift, capslock:                    'H'
+    capslock+shift:                     'h'
+    ctrl, alt, meta:                    none
+}
+
+key I {
+    label:                              'I'
+    base:                               'i'
+    shift, capslock:                    'I'
+    capslock+shift:                     'i'
+    ctrl, meta:                         none
+}
+
+key J {
+    label:                              'J'
+    base:                               'j'
+    shift, capslock:                    'J'
+    capslock+shift:                     'j'
+    ctrl, alt, meta:                    none
+}
+
+key K {
+    label:                              'K'
+    base:                               'k'
+    shift, capslock:                    'K'
+    capslock+shift:                     'k'
+    ctrl, alt, meta:                    none
+}
+
+key L {
+    label:                              'L'
+    base:                               'l'
+    shift, capslock:                    'L'
+    capslock+shift:                     'l'
+    ctrl, alt, meta:                    none
+}
+
+key M {
+    label:                              'M'
+    base:                               'm'
+    shift, capslock:                    'M'
+    capslock+shift:                     'm'
+    ralt:                               '\u00b5'
+}
+
+key N {
+    label:                              'N'
+    base:                               'n'
+    shift, capslock:                    'N'
+    capslock+shift:                     'n'
+    ctrl, meta:                         none
+}
+
+key O {
+    label:                              'O'
+    base:                               'o'
+    shift, capslock:                    'O'
+    capslock+shift:                     'o'
+    ctrl, alt, meta:                    none
+}
+
+key P {
+    label:                              'P'
+    base:                               'p'
+    shift, capslock:                    'P'
+    capslock+shift:                     'p'
+    ctrl, alt, meta:                    none
+}
+
+key Q {
+    label:                              'Q'
+    base:                               'q'
+    shift, capslock:                    'Q'
+    capslock+shift:                     'q'
+    ralt:          		        '@'
+}
+
+key R {
+    label:                              'R'
+    base:                               'r'
+    shift, capslock:                    'R'
+    capslock+shift:                     'r'
+    ctrl, alt, meta:                    none
+}
+
+key S {
+    label:                              'S'
+    base:                               's'
+    shift, capslock:                    'S'
+    capslock+shift:                     's'
+    ctrl, meta:                         none
+}
+
+key T {
+    label:                              'T'
+    base:                               't'
+    shift, capslock:                    'T'
+    capslock+shift:                     't'
+    ctrl, alt, meta:                    none
+}
+
+key U {
+    label:                              'U'
+    base:                               'u'
+    shift, capslock:                    'U'
+    capslock+shift:                     'u'
+    ctrl, meta:                         none
+}
+
+key V {
+    label:                              'V'
+    base:                               'v'
+    shift, capslock:                    'V'
+    capslock+shift:                     'v'
+    ctrl, alt, meta:                    none
+}
+
+key W {
+    label:                              'W'
+    base:                               'w'
+    shift, capslock:                    'W'
+    capslock+shift:                     'w'
+    ctrl, alt, meta:                    none
+}
+
+key X {
+    label:                              'X'
+    base:                               'x'
+    shift, capslock:                    'X'
+    capslock+shift:                     'x'
+    ctrl, alt, meta:                    none
+}
+
+key Y {
+    label:                              'Y'
+    base:                               'z'
+    shift, capslock:                    'Z'
+    capslock+shift:                     'z'
+    ctrl, alt, meta:                    none
+}
+
+key Z {
+    label:                              'Z'
+    base:                               'y'
+    shift, capslock:                    'Y'
+    capslock+shift:                     'y'
+}
+    
+key 0 {
+    label, number:                      '0'
+    base:                               '0'
+    shift, capslock:                    '='
+    capslock+shift:                     '0'
+    ralt:                               '}'
+}
+
+key 1 {
+    label, number:                      '1'
+    base:                               '1'
+    shift, capslock:                    '!'
+    capslock+shift:                     '1'
+    ctrl, alt, meta:                    none
+}
+
+key 2 {
+    label, number:                      '2'
+    base:                               '2'
+    shift, capslock:                    '"'
+    capslock+shift:                     '2'
+    ralt:                               '\u00b2'
+}
+
+key 3 {
+    label, number:                      '3'
+    base:                               '3'
+    shift, capslock:                    '\u00a7'
+    capslock+shift:                     '3'
+    ralt:                               '\u00b3'
+}
+
+key 4 {
+    label, number:                      '4'
+    base:                               '4'
+    shift, capslock:                    '$'
+    capslock+shift:                     '4'
+    ctrl, alt, meta:                    none
+}
+
+key 5 {
+    label, number:                      '5'
+    base:                               '5'
+    shift, capslock:                    '%'
+    capslock+shift:                     '5'
+    ctrl, alt, meta:                    none
+}
+
+key 6 {
+    label, number:                      '6'
+    base:                               '6'
+    shift, capslock:                    '&'
+    capslock+shift:                     '6'
+    ctrl, alt, meta:                    none
+}
+
+key 7 {
+    label, number:                      '7'
+    base:                               '7'
+    shift, capslock:                    '/'
+    capslock+shift:                     '7'
+    ralt:                               '{'
+}
+
+key 8 {
+    label, number:                      '8'
+    base:                               '8'
+    shift, capslock:                    '('
+    capslock+shift:                     '8'
+    ralt:                               '['
+}
+
+key 9 {
+    label, number:                      '9'
+    base:                               '9'
+    shift, capslock:                    ')'
+    capslock+shift:                     '9'
+    ralt:                               ']'
+}
+
+key SPACE {
+    label:                              ' '
+    base:                               ' '
+    ctrl, alt:                          none
+    meta:                               fallback SEARCH
+}
+
+key ENTER {
+    label:                              '\n'
+    base:                               '\n'
+    ctrl, alt, meta:                    none
+}
+
+key TAB {
+    label:                              '\t'
+    base:                               '\t'
+    ctrl, alt:                          none
+    meta:                               fallback APP_SWITCH
+}
+
+key COMMA {
+    label, number:                      ','
+    base:                               ','
+    shift, capslock:                    ';'
+    capslock+shift:                     ','
+    ctrl, alt, meta:                    none
+}
+
+key PERIOD {
+    label, number:                      '.'
+    base:                               '.'
+    shift, capslock:                    ':'
+    capslock+shift:                     '.'
+    ctrl, alt, meta:                    none
+}
+
+key SLASH {
+    label, number:                      '/'
+    base:                               '-'
+    shift, capslock:                    '_'
+    capslock+shift:                     '-'
+    ctrl, alt, meta:                    none
+}
+
+key GRAVE {
+    label, number:                      '`'
+    base:                               '\u005e'
+    shift, capslock:                    '\u00b0'
+    capslock+shift:                     '\u005e'
+    ctrl, meta:                         none
+}
+
+key MINUS {
+    label, number:                      '-'
+    base:                               '\u00df'
+    shift, capslock:                    '?'
+    capslock+shift:                     '\u00df'
+    ralt:                               '\\'
+}
+
+key EQUALS {
+    label, number:                      '='
+    base:                               '\u00b4'
+    shift, capslock:                    '\u0060'
+    capslock+shift:                     '\u00b4'
+    ctrl, alt, meta:                    none
+}
+
+key LEFT_BRACKET {
+    label, number:                      '['
+    base:                               '\u00fc'
+    shift, capslock:                    '\u00dc'
+    capslock+shift:                     '\u00fc'
+    ctrl, alt, meta:                    none
+}
+
+key RIGHT_BRACKET {
+    label, number:                      ']'
+    base:                               '+'
+    shift, capslock:                    '*'
+    capslock+shift:                     '+'
+    ralt:                               '~'
+}
+
+key POUND {
+    label, number:                      '#'
+    base:                               '#'
+    shift, capslock:                    '\''
+    capslock+shift:                     '#'
+}
+
+key SEMICOLON {
+    label, number:                      ';'
+    base:                               '\u00f6'
+    shift, capslock:                    '\u00d6'
+    capslock+shift:                     '\u00f6'
+    ctrl, alt, meta:                    none
+}
+
+key APOSTROPHE {
+    label, number:                      '\''
+    base:                               '\u00e4'
+    shift, capslock:                    '\u00c4'
+    capslock+shift:                     '\u00e4'
+    ctrl, alt, meta:                    none
+}
+
+key BACKSLASH {
+    label, number:			'<'
+    base:				'<'
+    shift:                              '>'
+    ralt:   	  			'|'
+}

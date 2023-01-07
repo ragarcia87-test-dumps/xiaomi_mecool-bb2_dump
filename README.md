@@ -1,0 +1,14 @@
+# oneday-user 9 PI 2603 release-keys
+- manufacturer: xiaomi
+- platform: gxm
+- codename: Mecool-BB2
+- flavor: Mecool-BB2-userdebug
+- release: 9
+- id: PI
+- incremental: 20200806
+- tags: test-keys
+- fingerprint: Xiaomi/oneday/oneday:9/PI/2231:user/release-keys
+- is_ab: false
+- brand: Xiaomi
+- branch: oneday-user-9-PI-2603-release-keys
+- repo: xiaomi_mecool-bb2_dump

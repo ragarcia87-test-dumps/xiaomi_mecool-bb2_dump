@@ -1,0 +1,26 @@
+#
+#  Q5-M Air Mouse [VID:1915 PID:1034]
+#
+
+#MIC_BTN (hw v1) // (26 - on pressed, 27 - on released, 29 - CTRL modifier)
+key 26   VOICE_ASSIST    # SEARCH|ASSIST|VOICE_ASSIST [LEFT_BRACKET]
+#key 27                  # [RIGHT_BRACKET]
+#key 29                  # [CTRL_LEFT]
+#//MIC_BTN
+#DPAD//
+key 28   DPAD_CENTER     # OK [ENTER]
+key 103  DPAD_UP         # UP
+key 105  DPAD_LEFT       # LEFT
+key 106  DPAD_RIGHT      # RIGHT
+key 108  DPAD_DOWN       # DOWN
+#//DPAD
+key 104  CHANNEL_UP      # PG+
+key 109  CHANNEL_DOWN    # PG-
+key 113  VOLUME_MUTE     # MUTE [VOLUME_MUTE]
+key 114  VOLUME_DOWN     # V-
+key 115  VOLUME_UP       # V+
+key 116  POWER           # POWER
+key 127  MENU            # MENU
+key 158  BACK            # BACK
+key 172  HOME            # HOME
+key 217  VOICE_ASSIST    # SEARCH|ASSIST|VOICE_ASSIST (hw v2)

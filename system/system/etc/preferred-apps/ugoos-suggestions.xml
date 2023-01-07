@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<preferred-activities>
+    <item name="com.ugoos.suggestions/com.ugoos.suggestions.SpeechRecognizerActivity">
+        <filter>
+            <action name="android.speech.action.WEB_SEARCH" />
+            <cat name="android.intent.category.DEFAULT" />
+        </filter>
+    </item>
+    <item name="com.ugoos.suggestions/com.ugoos.suggestions.SpeechRecognizerActivity">
+        <filter>
+            <action name="android.speech.action.RECOGNIZE_SPEECH" />
+            <cat name="android.intent.category.DEFAULT" />
+        </filter>
+    </item>
+    <item name="com.ugoos.suggestions/com.ugoos.suggestions.SuggestionsActivity">
+        <filter>
+            <action name="android.search.action.GLOBAL_SEARCH" />
+            <cat name="android.intent.category.DEFAULT" />
+        </filter>
+    </item>
+</preferred-activities>

@@ -1,0 +1,6 @@
+on boot
+
+service remotecfg7 /vendor/bin/remotecfg -t /vendor/etc/remote-0xfb04.tab
+class main
+oneshot
+seclabel u:r:remotecfg:s0

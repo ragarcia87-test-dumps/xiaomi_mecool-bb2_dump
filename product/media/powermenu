@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <string name="command_recovery">reboot update</string>
+    <boolean name="dark_theme" value="true" />
+</map>

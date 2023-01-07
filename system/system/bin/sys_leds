@@ -1,0 +1,17 @@
+#!/system/bin/sh
+
+sleep 5
+while (true)
+	do
+		wake=$(cat /sys/power/wake_lock | sed '/PowerManagerService.Display/!d')
+		if [ -n "$wake" ]
+			then
+     echo 1 > /sys/class/leds/blue/brightness
+				echo 0 > /sys/class/leds/red/brightness
+			else
+				echo 0 > /sys/class/leds/blue/brightness
+				echo 1 > /sys/class/leds/red/brightness
+		fi	
+		sleep 5
+done &
+

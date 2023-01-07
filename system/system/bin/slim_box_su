@@ -1,0 +1,115 @@
+#!/system/bin/sh
+
+GET_ROOT="get_root"
+GET_ROOT_SILENT="get_root_silent"
+RESTORE_ROOT="restore_root"
+FACTORY_RESET="factory_reset"
+
+function get_root()
+{
+  mount -o rw,remount /
+
+  cp -f /data/local/rootapps/su /system/xbin/su
+  chmod 06755 /system/xbin/su
+
+  cp -f /data/local/rootapps/su /system/xbin/daemonsu
+  chmod 0755 /system/xbin/daemonsu
+
+  cp -f /data/local/rootapps/supolicy /system/xbin/supolicy
+  chmod 0755 /system/xbin/supolicy
+
+  cp -f /data/local/rootapps/libsupol.so /system/lib/libsupol.so
+  chmod 0644 /system/lib/libsupol.so
+
+  mkdir /system/bin/.ext/
+  chmod 0711 /system/bin/.ext/
+
+  cp -f /data/local/rootapps/su /system/bin/.ext/.su
+  chmod 0755 /system/bin/.ext/.su
+
+  mount -o ro,remount /
+  /system/xbin/daemonsu --auto-daemon
+
+  pm install /data/local/rootapps/superuser.app
+}
+
+function get_root_silent()
+{
+  mount -o rw,remount /
+
+  cp -f /data/local/rootapps/su /system/xbin/su
+  chmod 06755 /system/xbin/su
+
+  cp -f /data/local/rootapps/su /system/xbin/daemonsu
+  chmod 0755 /system/xbin/daemonsu
+
+  mount -o ro,remount /
+
+  /system/xbin/daemonsu --auto-daemon
+}
+
+function restore_root()
+{
+  mount -o rw,remount /
+
+  rm /system/xbin/su
+  rm /system/xbin/daemonsu
+  rm /system/xbin/supolicy
+  rm /system/lib/libsupol.so
+  rm -R /system/bin/.ext/
+  rm -rf /tmp-mksh
+
+  mount -o ro,remount /
+  pm uninstall eu.chainfire.supersu
+  pm uninstall com.topjohnwu.magisk
+}
+
+function install_rootapps()
+{
+  mkdir -p /data/local/rootapps
+  unzip /system/usr/slimboxtv/apps -o -q -d /data/local/rootapps
+  chown -R root:root /data/local/rootapps
+  chmod -R 644 /data/local/rootapps
+}
+
+function remove_rootapps()
+{
+  rm -rf /data/local/rootapps
+}
+
+echo "su configure"
+
+case "$1" in
+       "$GET_ROOT")
+               echo "system will get root..."
+               install_rootapps
+               restore_root
+               get_root 
+               remove_rootapps
+               ;;
+       "$GET_ROOT_SILENT")
+               echo "system will get root silent..."
+               install_rootapps
+               restore_root
+               get_root_silent 
+               remove_rootapps
+               ;;
+       "$FACTORY_RESET")
+               echo "system will restore root..."
+               install_rootapps
+               restore_root
+               remove_rootapps
+               ;;
+       "$RESTORE_ROOT")
+               echo "system will restore root and reboot..."
+               install_rootapps
+               restore_root
+               remove_rootapps
+               sync
+               sleep 2
+               reboot
+               ;;
+       *) 
+               echo "unexpected argument"
+       ;;
+esac

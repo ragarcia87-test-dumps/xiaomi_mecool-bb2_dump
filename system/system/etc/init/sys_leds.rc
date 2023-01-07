@@ -1,0 +1,10 @@
+#!/system/bin/sh
+
+on property:dev.bootcomplete=1
+	start sys_leds
+
+service sys_leds /system/bin/sys_leds
+    class main
+    disabled
+    oneshot
+    seclabel u:r:init:s0

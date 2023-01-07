@@ -1,0 +1,11 @@
+on property:dev.bootcomplete=1
+    setprop app.user_scripts ${persist.sys.user_scripts}
+
+on property:app.user_scripts=1
+    start slim_box_scripts
+
+service slim_box_scripts /system/bin/slim_box_scripts
+    class main
+    disabled
+    oneshot
+    seclabel u:r:init:s0

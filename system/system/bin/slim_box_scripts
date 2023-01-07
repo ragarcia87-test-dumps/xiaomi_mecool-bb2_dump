@@ -1,0 +1,6 @@
+#!/system/bin/sh
+
+mkdir /data/media/0/init.d
+chown -R media_rw:media_rw /data/media/0/init.d
+chmod -R 777 /data/media/0/init.d
+/vendor/xbin/run-parts /data/media/0/init.d
